@@ -23,16 +23,20 @@ Bundle 'bling/vim-airline'
 set laststatus=2
 
 Bundle 'scrooloose/nerdtree'
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 let NERDTreeWinPos='right'
 let NERDTreeWinSize = 30
+let NERDTreeShowHidden = 1
 map <F2> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width=30
 map <F3> :Tagbar<CR>
 " 默认开启C/Cpp的tags
-autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
 
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'maksimr/vim-jsbeautify'
